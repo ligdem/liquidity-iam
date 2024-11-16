@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Identity Management App - Testing</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  
+   <!-- Load Web Components -->
+   <script type="module" src="components/app-root.js"></script>
+</head>
+<body>
+  <h1>Identity Management App - Testing Multiple Instances</h1>
+  <div id="app-container">
+    <!-- Multiple instances for testing -->
+    <div class="app-instance">
+      <app-root test></app-root>
+    </div>
+    <div class="app-instance">
+      <app-root test></app-root>
+    </div>
+    <div class="app-instance">
+      <app-root test></app-root>
+    </div>
+  </div>
+
+  <!-- Register Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
